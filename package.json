@@ -1,0 +1,39 @@
+{
+  "name": "salesbot-accesstoken",
+  "version": "1.0.0",
+  "description": "this wil collect the accesstoken from gearlaunch",
+  "main": "index.js",
+  "author": "Arifuzzaman Nishan (Rankvet)",
+  "license": "MIT",
+  "scripts": {
+    "clean-dist": "rimraf dist",
+    "build": "npm run clean-dist && tsc",
+    "start:dev": "ts-node src/index.ts",
+    "start": "npm run build && node dist/index.js",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "cron": "^2.3.0",
+    "dotenv": "^16.0.3",
+    "mongoose": "^7.0.3",
+    "puppeteer": "^19.8.3",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-anonymize-ua": "^2.4.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "rimraf": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/cron": "^2.0.1",
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.7",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.3"
+  }
+}
