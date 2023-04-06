@@ -24,7 +24,9 @@ const main = async () => {
         await db.connect();
 
         browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
+            // executablePath: '/bin/brave-browser-stable',
+            // userDataDir: '~/.config/BraveSoftware/Brave-Browser',
             args: [
                 `--window-size=${1280 + Math.floor(Math.random() * 100)},${
                     800 + Math.floor(Math.random() * 100)
@@ -68,9 +70,9 @@ const main = async () => {
     }
 };
 
-// console.log('waiting for cron...');
-// const job = new CronJob(`15,30,50 * * * *`, () => {
-main();
-// });
+console.log('waiting for cron...');
+const job = new CronJob(`15,30,50 * * * *`, () => {
+    main();
+});
 
-// job.start();
+job.start();
